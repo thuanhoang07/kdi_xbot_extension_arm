@@ -1,5 +1,9 @@
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
   <category name="KDI ARM" colour="#5CA699" icon="tv">
     <block type="unoarm_set_dimensions"/>
+    <block type="unoarm_check_valid">
+      <value name="S2"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+      <value name="S3"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+    </block>
   </category>
 </xml>
