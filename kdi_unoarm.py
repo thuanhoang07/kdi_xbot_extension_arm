@@ -70,3 +70,4 @@ def go_to_r_h(r, h):
 def quay_ve_goc(goc_S1):
     servo.position(0, int(goc_S1))
     print(f"Base rotated to {goc_S1}")
+    
