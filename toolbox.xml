@@ -1,4 +1,10 @@
 <xml id="toolbox" style="display: none">
+  <category name="UnoArm" colour="#5CA699" iconUri="poster.jpg">
+    <block type="unoarm_set_dimensions"></block>
+  </category>
+</xml>
+```xml
+<xml id="toolbox" style="display: none">
   <category name="UnoArm" colour="#5CA699">
     <block type="unoarm_set_dimensions" icon="poster.jpg"></block>
   </category>
