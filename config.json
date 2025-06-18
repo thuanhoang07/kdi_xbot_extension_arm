@@ -1,7 +1,11 @@
 {
     "name": "KDI EXTENSION",
     "description": "This is a KDI extension to help you with your tasks.",
-    "libs": [
+      "libs": [
+        "kdi_unoarm.py",
+        "mqtt.py",
+        "umqtt_robust.py",
+        "umqtt_simple.py"
     ],
     "blocks": [
         "definition.js"
