@@ -1,5 +1,11 @@
-<xml id="toolbox" style="display: none">
-  <category name="UnoArm" colour="#5CA699">
-    <block type="unoarm_set_dimensions"></block>
+<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+  <category name="KDI" colour="#ff3399" icon="tv">
+    <block type="kdi_create"/>
+    <block type="kdi_text">
+      <value name="TEXT"><shadow type="text"><field name="TEXT">hello</field></shadow></value>
+      <value name="X"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+      <value name="Y"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+    </block>    
+    <block type="kdi_clear"/>
   </category>
 </xml>
