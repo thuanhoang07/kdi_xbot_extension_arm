@@ -1,6 +1,6 @@
 {
-    "name": "Màn hình OLED I2C",
-    "description": "Mục mở rộng của xbot cho màn hình OLED I2C",
+    "name": "KDI EXTENSION",
+    "description": "This is a KDI extension to help you with your tasks.",
     "libs": [
     ],
     "blocks": [
