@@ -1,9 +1,9 @@
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
   <category name="KDI ARM" colour="#5CA699" icon="tv">
     <block type="unoarm_set_dimensions"/>
-    <block type="unoarm_check_valid"/>
+    <!-- <block type="unoarm_check_valid"/>
     <block type="unoarm_move_angles"/>
     <block type="unoarm_move_r_h"/>
-    <block type="unoarm_rotate_base"/>
+    <block type="unoarm_rotate_base"/> -->
   </category>
 </xml>
