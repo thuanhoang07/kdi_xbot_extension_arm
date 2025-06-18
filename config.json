@@ -1,0 +1,13 @@
+{
+    "name": "Màn hình OLED I2C",
+    "description": "Mục mở rộng của xbot cho màn hình OLED I2C",
+    "libs": [
+    ],
+    "blocks": [
+        "definition.js"
+    ],
+    "toolbox": "toolbox.xml",
+    "languages": {
+    },
+    "poster": "poster.jpg"
+}
