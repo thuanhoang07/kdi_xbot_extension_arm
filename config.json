@@ -1,8 +1,7 @@
 {
     "name": "KDI EXTENSION",
     "description": "This is a KDI extension to help you with your tasks.",
-    "libs": [
-    ],
+    "libs": ["kdi_unoarm.py"],
     "blocks": [
         "definition.js"
     ],
