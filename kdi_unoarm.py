@@ -9,16 +9,17 @@ _d3 = 16
 _d4 = 4.64
 _d5 = 7.5
 
-#khai bao vi tri ban dau
-y_now = 28 #tam xa
-z_now = 9 #tam cao
-phi_now = 90 #goc
+# khai bao vi tri ban dau
+y_now = 28  # tam xa
+z_now = 9  # tam cao
+phi_now = 90  # goc
 topic_hut = None
 step = 0.1
-#khai bao cac hang so khac
+# khai bao cac hang so khac
 pause = 0.01
 pause2 = 0.01
 cong_suat_hut = 100
+
 
 def set_dimensions(d1, d2, d3, d4, d5):
     global _d1, _d2, _d3, _d4, _d5
@@ -27,50 +28,76 @@ def set_dimensions(d1, d2, d3, d4, d5):
     _d3 = d3
     _d4 = d4
     _d5 = d5
-    
+
+
 def kiem_tra_tinh_hop_le(check_S2, check_S3):
-  hop_le = True
-  if check_S3 > 170:
-    hop_le = False
-  elif check_S2 > 180:
-    hop_le = False
-  elif (15 / 16) * check_S2 + check_S3 < 129.375:
-    hop_le = False
-  elif check_S3 < check_S2 / 2:
-    hop_le = False
-  elif check_S3 > (check_S2 * 5) / 8 + 113.75:
-    hop_le = False
-  print("Kiem tra hop le:", hop_le)
-  return hop_le
+    hop_le = True
+    if check_S3 > 170:
+        hop_le = False
+    elif check_S2 > 180:
+        hop_le = False
+    elif (15 / 16) * check_S2 + check_S3 < 129.375:
+        hop_le = False
+    elif check_S3 < check_S2 / 2:
+        hop_le = False
+    elif check_S3 > (check_S2 * 5) / 8 + 113.75:
+        hop_le = False
+    print("Kiem tra hop le:", hop_le)
+    return hop_le
 
 
 def go_to_S2_S3(to_S2, to_S3):
-  print((''.join([str(x2) for x2 in ['di den goc: ', to_S2, ' , ', to_S3]])))
-  if kiem_tra_tinh_hop_le(to_S2, to_S3):
-    init_S2 = servo.position(1)
-    init_S3 = servo.position(2)
-    current_S2 = servo.position(1)
-    current_S3 = servo.position(2)
-    q = math.sqrt((init_S2 - to_S2) * (init_S2 - to_S2) + (init_S3 - to_S3) * (init_S3 - to_S3))
-    if q != 0:
-      buoc_S2 = 2 * ((to_S2 - init_S2) / q)
-      buoc_S3 = 2 * ((to_S3 - init_S3) / q)
-      if init_S2 < to_S2:
-        while current_S2 <= to_S2:
-          current_S2 = (current_S2 if isinstance(current_S2, (int, float)) else 0) + buoc_S2
-          current_S3 = (current_S3 if isinstance(current_S3, (int, float)) else 0) + buoc_S3
-          servo.position(1, (round(current_S2)))
-          time.sleep(pause)
-          servo.position(2, (round(current_S3)))
-          time.sleep(pause)
-      else:
-        while current_S2 >= to_S2:
-          current_S2 = (current_S2 if isinstance(current_S2, (int, float)) else 0) + buoc_S2
-          current_S3 = (current_S3 if isinstance(current_S3, (int, float)) else 0) + buoc_S3
-          servo.position(1, (round(current_S2)))
-          time.sleep(pause)
-          servo.position(2, (round(current_S3)))
-          time.sleep(pause)
-      print((''.join([str(x3) for x3 in ['S2 va S3 moi duoc cap nhat: ', servo.position(1), ' , ', servo.position(2)]])))
-  else:
-    print('khong hop le')
+    print(("".join([str(x2) for x2 in ["di den goc: ", to_S2, " , ", to_S3]])))
+    if kiem_tra_tinh_hop_le(to_S2, to_S3):
+        init_S2 = servo.position(1)
+        init_S3 = servo.position(2)
+        current_S2 = servo.position(1)
+        current_S3 = servo.position(2)
+        q = math.sqrt(
+            (init_S2 - to_S2) * (init_S2 - to_S2)
+            + (init_S3 - to_S3) * (init_S3 - to_S3)
+        )
+        if q != 0:
+            buoc_S2 = 2 * ((to_S2 - init_S2) / q)
+            buoc_S3 = 2 * ((to_S3 - init_S3) / q)
+            if init_S2 < to_S2:
+                while current_S2 <= to_S2:
+                    current_S2 = (
+                        current_S2 if isinstance(current_S2, (int, float)) else 0
+                    ) + buoc_S2
+                    current_S3 = (
+                        current_S3 if isinstance(current_S3, (int, float)) else 0
+                    ) + buoc_S3
+                    servo.position(1, (round(current_S2)))
+                    time.sleep(pause)
+                    servo.position(2, (round(current_S3)))
+                    time.sleep(pause)
+            else:
+                while current_S2 >= to_S2:
+                    current_S2 = (
+                        current_S2 if isinstance(current_S2, (int, float)) else 0
+                    ) + buoc_S2
+                    current_S3 = (
+                        current_S3 if isinstance(current_S3, (int, float)) else 0
+                    ) + buoc_S3
+                    servo.position(1, (round(current_S2)))
+                    time.sleep(pause)
+                    servo.position(2, (round(current_S3)))
+                    time.sleep(pause)
+            print(
+                (
+                    "".join(
+                        [
+                            str(x3)
+                            for x3 in [
+                                "S2 va S3 moi duoc cap nhat: ",
+                                servo.position(1),
+                                " , ",
+                                servo.position(2),
+                            ]
+                        ]
+                    )
+                )
+            )
+    else:
+        print("khong hop le")
