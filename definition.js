@@ -43,13 +43,9 @@ Blockly.Blocks['unoarm_check_valid'] = {
   }
 };
 
-// Python generator chung
-Blockly.Python.definitions_['import_kdi_unoarm'] =
-  'import kdi_unoarm\n' +
-  'kdi_unoarm = kdi_unoarm';
-
 // Generator cho block Set dimensions
 Blockly.Python['unoarm_set_dimensions'] = function(block) {
+  Blockly.Python.definitions_['import_kdi_unoarm'] = 'from kdi_unoarm import *';
   var d1 = Blockly.Python.valueToCode(block, 'D1', Blockly.Python.ORDER_ATOMIC) || '0';
   var d2 = Blockly.Python.valueToCode(block, 'D2', Blockly.Python.ORDER_ATOMIC) || '0';
   var d3 = Blockly.Python.valueToCode(block, 'D3', Blockly.Python.ORDER_ATOMIC) || '0';
@@ -60,6 +56,7 @@ Blockly.Python['unoarm_set_dimensions'] = function(block) {
 
 // Generator cho block Check valid S2, S3
 Blockly.Python['unoarm_check_valid'] = function(block) {
+  Blockly.Python.definitions_['import_kdi_unoarm'] = 'from kdi_unoarm import *';
   var s2 = Blockly.Python.valueToCode(block, 'S2', Blockly.Python.ORDER_ATOMIC) || '0';
   var s3 = Blockly.Python.valueToCode(block, 'S3', Blockly.Python.ORDER_ATOMIC) || '0';
   var code = 'kdi_unoarm.kiem_tra_tinh_hop_le(' + s2 + ', ' + s3 + ')';
