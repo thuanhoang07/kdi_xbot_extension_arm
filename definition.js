@@ -44,7 +44,9 @@ Blockly.Blocks['unoarm_check_valid'] = {
 };
 
 // Python generator chung
-Blockly.Python.definitions_['import_kdi_unoarm'] = 'import kdi_unoarm';
+Blockly.Python.definitions_['import_kdi_unoarm'] =
+  'import kdi_unoarm\n' +
+  'kdi_unoarm = kdi_unoarm';
 
 // Generator cho block Set dimensions
 Blockly.Python['unoarm_set_dimensions'] = function(block) {
