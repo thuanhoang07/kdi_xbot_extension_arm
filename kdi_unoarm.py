@@ -1,6 +1,6 @@
 # kdi_unoarm.py
 # Python library for UnoArm control
-# from remote_control import *
+from remote_control import *
 
 # Default dimensions
 _d1 = 10.25
