@@ -13,5 +13,19 @@
       <value name="S2"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
       <value name="S3"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
     </block>
+
+    <!-- Block mới Go to S2, S3 -->
+    <block type="unoarm_go_to_s2_s3">
+      <value name="TO_S2">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+      <value name="TO_S3">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+    </block>
   </category>
 </xml>

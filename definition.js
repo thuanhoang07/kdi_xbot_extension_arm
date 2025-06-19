@@ -62,3 +62,33 @@ Blockly.Python['unoarm_check_valid'] = function(block) {
   var code = 'kdi_unoarm.kiem_tra_tinh_hop_le(' + s2 + ', ' + s3 + ')';
   return [code, Blockly.Python.ORDER_FUNCTION_CALL];
 };
+
+
+// 1) Block: Go to S2, S3
+Blockly.Blocks['unoarm_go_to_s2_s3'] = {
+  init: function() {
+    this.appendValueInput("TO_S2")
+        .setCheck("Number")
+        .appendField("Go to S2");
+    this.appendValueInput("TO_S3")
+        .setCheck("Number")
+        .appendField("S3")
+        .appendField("to");
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(230);
+    this.setTooltip("Move the arm to the specified S2 and S3 angles");
+    this.setHelpUrl("");
+  }
+};
+
+// 2) Python generator cho block Go to S2, S3
+Blockly.Python['unoarm_go_to_s2_s3'] = function(block) {
+  // đảm bảo import module có ở definitions_ (nếu chưa có, thêm vào đầu file)
+  Blockly.Python.definitions_['import_kdi_unoarm'] = 'import kdi_unoarm';
+  Blockly.Python.definitions_['import_remote_control'] = 'from remote_control import *';
+
+  var toS2 = Blockly.Python.valueToCode(block, 'TO_S2', Blockly.Python.ORDER_ATOMIC) || '0';
+  var toS3 = Blockly.Python.valueToCode(block, 'TO_S3', Blockly.Python.ORDER_ATOMIC) || '0';
+  return 'kdi_unoarm.go_to_S2_S3(' + toS2 + ', ' + toS3 + ')\n';
+};

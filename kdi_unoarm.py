@@ -1,5 +1,6 @@
 # kdi_unoarm.py
 # Python library for UnoArm control
+from remote_control import *
 
 # Default dimensions
 _d1 = 10.25
@@ -41,3 +42,35 @@ def kiem_tra_tinh_hop_le(check_S2, check_S3):
     hop_le = False
   print("Kiem tra hop le:", hop_le)
   return hop_le
+
+
+def go_to_S2_S3(to_S2, to_S3):
+  print((''.join([str(x2) for x2 in ['di den goc: ', to_S2, ' , ', to_S3]])))
+  if kiem_tra_tinh_hop_le(to_S2, to_S3):
+    init_S2 = servo.position(1)
+    init_S3 = servo.position(2)
+    current_S2 = servo.position(1)
+    current_S3 = servo.position(2)
+    q = math.sqrt((init_S2 - to_S2) * (init_S2 - to_S2) + (init_S3 - to_S3) * (init_S3 - to_S3))
+    if q != 0:
+      buoc_S2 = 2 * ((to_S2 - init_S2) / q)
+      buoc_S3 = 2 * ((to_S3 - init_S3) / q)
+      if init_S2 < to_S2:
+        while current_S2 <= to_S2:
+          current_S2 = (current_S2 if isinstance(current_S2, (int, float)) else 0) + buoc_S2
+          current_S3 = (current_S3 if isinstance(current_S3, (int, float)) else 0) + buoc_S3
+          servo.position(1, (round(current_S2)))
+          time.sleep(pause)
+          servo.position(2, (round(current_S3)))
+          time.sleep(pause)
+      else:
+        while current_S2 >= to_S2:
+          current_S2 = (current_S2 if isinstance(current_S2, (int, float)) else 0) + buoc_S2
+          current_S3 = (current_S3 if isinstance(current_S3, (int, float)) else 0) + buoc_S3
+          servo.position(1, (round(current_S2)))
+          time.sleep(pause)
+          servo.position(2, (round(current_S3)))
+          time.sleep(pause)
+      print((''.join([str(x3) for x3 in ['S2 va S3 moi duoc cap nhat: ', servo.position(1), ' , ', servo.position(2)]])))
+  else:
+    print('khong hop le')
