@@ -1,8 +1,12 @@
 {
-    "name": "KDI EXTENSION",
-    "description": "Extension for UnoArm control: configure dimensions and validate angles",
-    "libs": ["kdi_unoarm.py"],
-    "blocks": ["definition.js"],
-    "toolbox": "toolbox.xml",
-    "poster": "poster.jpg"
+  "name": "KDI EXTENSION",
+  "description": "Extension for UnoArm control: configure dimensions and validate angles",
+  "libs": ["kdi_unoarm.py"],
+  "blocks": ["definition.js"],
+  "toolbox": "toolbox.xml",
+  "languages": {
+    "en": "languages/en.js",
+    "vi": "languages/vi.js"
+  },
+  "poster": "poster.jpg"
 }
