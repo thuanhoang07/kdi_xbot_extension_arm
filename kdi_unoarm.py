@@ -39,4 +39,5 @@ def kiem_tra_tinh_hop_le(check_S2, check_S3):
     hop_le = False
   elif check_S3 > (check_S2 * 5) / 8 + 113.75:
     hop_le = False
+  print("Kiem tra hop le:", hop_le)
   return hop_le
