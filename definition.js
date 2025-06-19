@@ -26,7 +26,7 @@ Blockly.Blocks['unoarm_set_dimensions'] = {
   }
 };
 
-// Định nghĩa block: Check valid angles S2, S3 (value block)
+// Block: Check valid angles S2, S3 (value block)
 Blockly.Blocks['unoarm_check_valid'] = {
   init: function() {
     this.appendValueInput("S2")
@@ -35,7 +35,7 @@ Blockly.Blocks['unoarm_check_valid'] = {
     this.appendValueInput("S3")
         .setCheck("Number")
         .appendField("S3");
-    // Quan trọng: khai báo là output block và kiểu Boolean
+    // Đây chính là connector hình ‘viên gạch’ để cắm vào khung value
     this.setOutput(true, "Boolean");
     this.setColour(210);
     this.setTooltip("Returns true if the (S2, S3) angles are within valid range");
@@ -55,8 +55,8 @@ Blockly.Python['unoarm_set_dimensions'] = function(block) {
   var d5 = Blockly.Python.valueToCode(block, 'D5', Blockly.Python.ORDER_ATOMIC) || '0';
   return 'kdi_unoarm.set_dimensions(' + d1 + ', ' + d2 + ', ' + d3 + ', ' + d4 + ', ' + d5 + ')\n';
 };
-
-// Generator cho block Check valid S2, S3
+// Python generator cho block kiểm tra
+Blockly.Python.definitions_['import_kdi_unoarm'] = 'import kdi_unoarm';
 Blockly.Python['unoarm_check_valid'] = function(block) {
   var s2 = Blockly.Python.valueToCode(block, 'S2', Blockly.Python.ORDER_ATOMIC) || '0';
   var s3 = Blockly.Python.valueToCode(block, 'S3', Blockly.Python.ORDER_ATOMIC) || '0';
