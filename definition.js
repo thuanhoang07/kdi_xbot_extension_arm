@@ -1,58 +1,65 @@
-// Đảm bảo import trong đầu file Python
-Blockly.Python.definitions_['import_kdi_unoarm'] = 'import kdi_unoarm';
-
-// Block: Set UnoArm dimensions
+// Định nghĩa block: Set dimensions
 Blockly.Blocks['unoarm_set_dimensions'] = {
   init: function() {
-    this.jsonInit({
-      "type": "unoarm_set_dimensions",
-      "message0": "Set dimensions d1 %1 d2 %2 d3 %3 d4 %4 d5 %5",
-      "args0": [
-        {"type": "field_number", "name": "D1", "value": 10.25},
-        {"type": "field_number", "name": "D2", "value": 15},
-        {"type": "field_number", "name": "D3", "value": 16},
-        {"type": "field_number", "name": "D4", "value": 4.64},
-        {"type": "field_number", "name": "D5", "value": 7.5}
-      ],
-      "previousStatement": null,
-      "nextStatement": null,
-      "colour": "#5CA699",
-      "tooltip": "Set the five dimension parameters d1 to d5",
-      "helpUrl": ""
-    });
+    this.appendDummyInput()
+        .appendField("Set dimensions");
+    this.appendValueInput("D1")
+        .setCheck("Number")
+        .appendField("d1");
+    this.appendValueInput("D2")
+        .setCheck("Number")
+        .appendField("d2");
+    this.appendValueInput("D3")
+        .setCheck("Number")
+        .appendField("d3");
+    this.appendValueInput("D4")
+        .setCheck("Number")
+        .appendField("d4");
+    this.appendValueInput("D5")
+        .setCheck("Number")
+        .appendField("d5");
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(230);
+    this.setTooltip("Set the five dimension parameters d1 to d5");
+    this.setHelpUrl("");
   }
-};
-Blockly.Python['unoarm_set_dimensions'] = function(block) {
-  var d1 = block.getFieldValue('D1');
-  var d2 = block.getFieldValue('D2');
-  var d3 = block.getFieldValue('D3');
-  var d4 = block.getFieldValue('D4');
-  var d5 = block.getFieldValue('D5');
-  return `kdi_unoarm.set_dimensions(${d1}, ${d2}, ${d3}, ${d4}, ${d5})\n`;
 };
 
-// Block: Check valid S2, S3 (inline number fields)
+// Định nghĩa block: Check valid angles S2, S3 (value block)
 Blockly.Blocks['unoarm_check_valid'] = {
   init: function() {
-    this.jsonInit({
-      "type": "unoarm_check_valid",
-      "message0": "Check valid S2 %1 S3 %2",
-      "args0": [
-        {"type": "field_number", "name": "S2", "value": 0},
-        {"type": "field_number", "name": "S3", "value": 0}
-      ],
-      "output": "Boolean",
-      "colour": "#5CA699",
-      "tooltip": "Returns true if the (S2, S3) angles are within valid range",
-      "helpUrl": ""
-    });
+    this.appendValueInput("S2")
+        .setCheck("Number")
+        .appendField("Check valid S2");
+    this.appendValueInput("S3")
+        .setCheck("Number")
+        .appendField("S3");
+    // Quan trọng: khai báo là output block và kiểu Boolean
+    this.setOutput(true, "Boolean");
+    this.setColour(210);
+    this.setTooltip("Returns true if the (S2, S3) angles are within valid range");
+    this.setHelpUrl("");
   }
 };
+
+// Python generator chung
+Blockly.Python.definitions_['import_kdi_unoarm'] = 'import kdi_unoarm';
+
+// Generator cho block Set dimensions
+Blockly.Python['unoarm_set_dimensions'] = function(block) {
+  var d1 = Blockly.Python.valueToCode(block, 'D1', Blockly.Python.ORDER_ATOMIC) || '0';
+  var d2 = Blockly.Python.valueToCode(block, 'D2', Blockly.Python.ORDER_ATOMIC) || '0';
+  var d3 = Blockly.Python.valueToCode(block, 'D3', Blockly.Python.ORDER_ATOMIC) || '0';
+  var d4 = Blockly.Python.valueToCode(block, 'D4', Blockly.Python.ORDER_ATOMIC) || '0';
+  var d5 = Blockly.Python.valueToCode(block, 'D5', Blockly.Python.ORDER_ATOMIC) || '0';
+  return 'kdi_unoarm.set_dimensions(' + d1 + ', ' + d2 + ', ' + d3 + ', ' + d4 + ', ' + d5 + ')\n';
+};
+
+// Generator cho block Check valid S2, S3
 Blockly.Python['unoarm_check_valid'] = function(block) {
-  // Đảm bảo import nếu user chỉ dùng block này
-  Blockly.Python.definitions_['import_kdi_unoarm'] = 'import kdi_unoarm';
-  var s2 = block.getFieldValue('S2');
-  var s3 = block.getFieldValue('S3');
-  var code = `kdi_unoarm.kiem_tra_tinh_hop_le(${s2}, ${s3})`;
+  var s2 = Blockly.Python.valueToCode(block, 'S2', Blockly.Python.ORDER_ATOMIC) || '0';
+  var s3 = Blockly.Python.valueToCode(block, 'S3', Blockly.Python.ORDER_ATOMIC) || '0';
+  var code = 'kdi_unoarm.kiem_tra_tinh_hop_le(' + s2 + ', ' + s3 + ')';
   return [code, Blockly.Python.ORDER_FUNCTION_CALL];
 };
