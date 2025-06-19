@@ -63,3 +63,8 @@ Blockly.Python['unoarm_check_valid'] = function(block) {
   var code = 'kdi_unoarm.kiem_tra_tinh_hop_le(' + s2 + ', ' + s3 + ')';
   return [code, Blockly.Python.ORDER_FUNCTION_CALL];
 };
+
+// cho phép engine biết biến kdi_unoarm đã được định nghĩa bên import
+Blockly.Python.getDeveloperVars = function() {
+  return ['kdi_unoarm'];
+};
