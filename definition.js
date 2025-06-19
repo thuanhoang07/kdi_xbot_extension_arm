@@ -1,4 +1,7 @@
-// UnoArm - JSON block definitions mimicking MQTT example
+// Đảm bảo import trong đầu file Python
+Blockly.Python.definitions_['import_kdi_unoarm'] = 'import kdi_unoarm';
+
+// Block: Set UnoArm dimensions
 Blockly.Blocks['unoarm_set_dimensions'] = {
   init: function() {
     this.jsonInit({
@@ -19,16 +22,16 @@ Blockly.Blocks['unoarm_set_dimensions'] = {
     });
   }
 };
-Blockly.Python.definitions_['import_kdi_unoarm'] = 'import kdi_unoarm';
 Blockly.Python['unoarm_set_dimensions'] = function(block) {
   var d1 = block.getFieldValue('D1');
   var d2 = block.getFieldValue('D2');
   var d3 = block.getFieldValue('D3');
   var d4 = block.getFieldValue('D4');
   var d5 = block.getFieldValue('D5');
-  return 'kdi_unoarm.set_dimensions(' + d1 + ', ' + d2 + ', ' + d3 + ', ' + d4 + ', ' + d5 + ')\n';
+  return `kdi_unoarm.set_dimensions(${d1}, ${d2}, ${d3}, ${d4}, ${d5})\n`;
 };
 
+// Block: Check valid S2, S3 (inline number fields)
 Blockly.Blocks['unoarm_check_valid'] = {
   init: function() {
     this.jsonInit({
@@ -46,8 +49,10 @@ Blockly.Blocks['unoarm_check_valid'] = {
   }
 };
 Blockly.Python['unoarm_check_valid'] = function(block) {
+  // Đảm bảo import nếu user chỉ dùng block này
+  Blockly.Python.definitions_['import_kdi_unoarm'] = 'import kdi_unoarm';
   var s2 = block.getFieldValue('S2');
   var s3 = block.getFieldValue('S3');
-  var code = 'kdi_unoarm.kiem_tra_tinh_hop_le(' + s2 + ', ' + s3 + ')';
+  var code = `kdi_unoarm.kiem_tra_tinh_hop_le(${s2}, ${s3})`;
   return [code, Blockly.Python.ORDER_FUNCTION_CALL];
 };
