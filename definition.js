@@ -39,21 +39,27 @@ Blockly.Python['unoarm_set_dimensions'] = function(block) {
   return code;
 };
 
-// Block: Check valid angles S2, S3 (value block)
+// Block: Check valid S2, S3 (inline number fields)
 Blockly.Blocks['unoarm_check_valid'] = {
   init: function() {
-    this.appendValueInput('S2')
-        .setCheck('Number')
-        .appendField('Check valid S2');
-    this.appendValueInput('S3')
-        .setCheck('Number')
-        .appendField('S3');
-    this.setInputsInline(true);
+    this.appendDummyInput()
+        .appendField('Check valid S2:')
+        .appendField(new Blockly.FieldNumber(0), 'S2')
+        .appendField(' S3:')
+        .appendField(new Blockly.FieldNumber(0), 'S3');
     this.setOutput(true, 'Boolean');
     this.setColour(210);
     this.setTooltip('Returns true if the (S2, S3) angles are within valid range');
     this.setHelpUrl('');
   }
+};
+
+// Generator: Check valid angles
+Blockly.Python['unoarm_check_valid'] = function(block) {
+  var s2 = block.getFieldValue('S2');
+  var s3 = block.getFieldValue('S3');
+  var code = 'kdi_unoarm.kiem_tra_tinh_hop_le(' + s2 + ', ' + s3 + ')';
+  return [code, Blockly.Python.ORDER_FUNCTION_CALL];
 };
 
 // Generator: Check valid angles
