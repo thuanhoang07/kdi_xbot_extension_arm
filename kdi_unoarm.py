@@ -14,8 +14,8 @@ _d4 = 4.64
 _d5 = 7.5
 
 # khai bao vi tri ban dau
-y_now = 28  # tam xa
-z_now = 9  # tam cao
+r_now = 28  # tam xa
+h_now = 9  # tam cao
 phi_now = 90  # goc
 topic_hut = None
 step = 0.1
@@ -108,7 +108,7 @@ def go_to_S2_S3(to_S2, to_S3):
 
 
 def go_to_r_h(r, h):
-  global y_now, z_now
+  global r_now, h_now
   print("-----------------")
   print("di den vi tri: r = ",r," ,h = ",h)
   y1 = r - _d4
@@ -127,7 +127,7 @@ def go_to_r_h(r, h):
   
   go_to_S2_S3(to_S2, to_S3)
   
-  y_now = r
-  z_now = h
+  r_now = r
+  h_now = h
   
-  print("r_now = ", y_now, ", h_now = ", z_now)
+  print("r_now = ", r_now, ", h_now = ", h_now)

@@ -123,3 +123,36 @@ Blockly.Python['unoarm_go_to_r_h'] = function(block) {
   var code = 'kdi_unoarm.go_to_r_h(' + r + ', ' + h + ')\n';
   return code;
 };
+
+// --- Block: Get current r_now (Number) ---
+Blockly.Blocks['unoarm_get_r_now'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Get current r_now");
+    this.setOutput(true, "Number");
+    this.setColour(230);
+    this.setTooltip("Trả về giá trị r_now hiện tại");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Python['unoarm_get_r_now'] = function(block) {
+  Blockly.Python.definitions_['import_kdi_unoarm'] = 'import kdi_unoarm';
+  return ['kdi_unoarm.r_now', Blockly.Python.ORDER_ATOMIC];
+};
+
+// --- Block: Get current h_now (Number) ---
+Blockly.Blocks['unoarm_get_h_now'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Get current h_now");
+    this.setOutput(true, "Number");
+    this.setColour(230);
+    this.setTooltip("Trả về giá trị h_now hiện tại");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Python['unoarm_get_h_now'] = function(block) {
+  Blockly.Python.definitions_['import_kdi_unoarm'] = 'import kdi_unoarm';
+  return ['kdi_unoarm.h_now', Blockly.Python.ORDER_ATOMIC];
+};
+
