@@ -2,6 +2,7 @@
 # Python library for UnoArm control
 # from remote_control import *
 from servo import servo
+import math
 
 # Default dimensions
 _d1 = 10.25
