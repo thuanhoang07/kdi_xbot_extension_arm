@@ -71,7 +71,6 @@ Blockly.Python['unoarm_check_valid'] = function(block) {
   return [code, Blockly.Python.ORDER_FUNCTION_CALL];
 };
 
-
 // 1) Block: Go to S2, S3
 Blockly.Blocks['unoarm_go_to_s2_s3'] = {
   init: function() {
