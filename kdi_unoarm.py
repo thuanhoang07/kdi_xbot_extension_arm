@@ -123,7 +123,7 @@ def go_to_r_h(r, h):
   phi1 = phi3 + phi4
   to_S2 = 2 * phi1 - 190
   to_S3 = (phi2 + to_S2 / 2) - 25
-#   print((''.join([str(x4) for x4 in ['S2 = ', to_S2, ', S3 = ', to_S3, ', phi2 = ', phi2, ', phi1 = ', phi1, ', phi3 = ', phi3, ', phi4 = ', phi4, ', d6 = ', d6, ', y = ', y, ', z = ', z, ', y1 = ', y1, ', z1 = ', z1, ', i = ', i]])))
+  #print((''.join([str(x4) for x4 in ['S2 = ', to_S2, ', S3 = ', to_S3, ', phi2 = ', phi2, ', phi1 = ', phi1, ', phi3 = ', phi3, ', phi4 = ', phi4, ', d6 = ', d6, ', y = ', y, ', z = ', z, ', y1 = ', y1, ', z1 = ', z1, ', i = ', i]])))
   
   go_to_S2_S3(to_S2, to_S3)
   
