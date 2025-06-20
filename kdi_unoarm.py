@@ -127,7 +127,8 @@ def go_to_r_h(r, h):
   
   go_to_S2_S3(to_S2, to_S3)
   
-  r_now = r
-  h_now = h
+  if kiem_tra_tinh_hop_le(to_S2, to_S3):
+    r_now = r
+    h_now = h
   
   print("r_now = ", r_now, ", h_now = ", h_now)
