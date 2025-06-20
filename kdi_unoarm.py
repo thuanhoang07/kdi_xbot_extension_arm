@@ -3,6 +3,8 @@
 # from remote_control import *
 from servo import servo
 import math
+import time
+
 
 # Default dimensions
 _d1 = 10.25
