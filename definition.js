@@ -29,12 +29,20 @@ Blockly.Blocks['unoarm_set_dimensions'] = {
 // Định nghĩa block: Check valid angles S2, S3 (value block)
 Blockly.Blocks['unoarm_check_valid'] = {
   init: function() {
+    // this.appendValueInput("S2")
+    //     .setCheck("Number")
+    //     .appendField("Check valid S2");
+    // this.appendValueInput("S3")
+    //     .setCheck("Number")
+    //     .appendField("S3");
+    this.appendDummyInput()
+        .appendField("Kiểm tra giá trị hợp lệ của S2:");
     this.appendValueInput("S2")
-        .setCheck("Number")
-        .appendField("Check valid S2");
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("S3:");
     this.appendValueInput("S3")
-        .setCheck("Number")
-        .appendField("S3");
+        .setCheck("Number");
     // Quan trọng: khai báo là output block và kiểu Boolean
     this.setOutput(true, "Boolean");
     this.setColour(210);
@@ -67,12 +75,6 @@ Blockly.Python['unoarm_check_valid'] = function(block) {
 // 1) Block: Go to S2, S3
 Blockly.Blocks['unoarm_go_to_s2_s3'] = {
   init: function() {
-    // this.appendValueInput("TO_S2")
-    //     .setCheck("Number")
-    //     .appendField("Đi đến S2:");
-    // this.appendValueInput("TO_S3")
-    //     .setCheck("Number")
-    //     .appendField("S3:")
     this.appendDummyInput()
         .appendField("Đi đến S2:");
     this.appendValueInput("TO_S2")
