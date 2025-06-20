@@ -105,3 +105,28 @@ def go_to_S2_S3(to_S2, to_S3):
             )
     else:
         print("khong hop le")
+
+
+def go_to_r_h(r, h):
+  global y_now, z_now
+  print("-----------------")
+  print("di den vi tri: r = ",r," ,h = ",h)
+  y1 = r - _d4
+  z1 = h + _d5
+  d6 = math.sqrt(y1 * y1 + (z1 - _d1) * (z1 - _d1))
+  phi2 = math.acos((_d2 * _d2 + (_d3 * _d3 - d6 * d6)) / (2 * (_d2 * _d3))) / math.pi * 180
+  phi3 = math.acos((_d2 * _d2 + (d6 * d6 - _d3 * _d3)) / (2 * (_d2 * d6))) / math.pi * 180
+  if z1 > _d1:
+    phi4 = 180 - math.asin(y1 / d6) / math.pi * 180
+  else:
+    phi4 = math.asin(y1 / d6) / math.pi * 180
+  phi1 = phi3 + phi4
+  to_S2 = 2 * phi1 - 190
+  to_S3 = (phi2 + to_S2 / 2) - 25
+  print((''.join([str(x4) for x4 in ['S2 = ', to_S2, ', S3 = ', to_S3, ', phi2 = ', phi2, ', phi1 = ', phi1, ', phi3 = ', phi3, ', phi4 = ', phi4, ', d6 = ', d6, ', y = ', y, ', z = ', z, ', y1 = ', y1, ', z1 = ', z1, ', i = ', i]])))
+  
+  go_to_S2_S3(to_S2, to_S3)
+  
+  y_now = r
+  z_now = h
+  print("r_now = ", y_now, ", h_now = ", z_now)

@@ -93,3 +93,33 @@ Blockly.Python['unoarm_go_to_s2_s3'] = function(block) {
   var toS3 = Blockly.Python.valueToCode(block, 'TO_S3', Blockly.Python.ORDER_ATOMIC) || '0';
   return 'kdi_unoarm.go_to_S2_S3(' + toS2 + ', ' + toS3 + ')\n';
 };
+
+// 1. Định nghĩa block UNOARM_GO_TO_R_H
+Blockly.Blocks['unoarm_go_to_r_h'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Di chuyển đến r");
+    this.appendValueInput("R")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("h");
+    this.appendValueInput("H")
+        .setCheck("Number");
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(230);
+    this.setTooltip("Di chuyển UnoArm đến toạ độ (r, h)");
+    this.setHelpUrl("");
+  }
+};
+
+// 2. Python generator cho block UNOARM_GO_TO_R_H
+Blockly.Python['unoarm_go_to_r_h'] = function(block) {
+  var r = Blockly.Python.valueToCode(block, 'R', Blockly.Python.ORDER_ATOMIC) || '0';
+  var h = Blockly.Python.valueToCode(block, 'H', Blockly.Python.ORDER_ATOMIC) || '0';
+  Blockly.Python.definitions_['import_kdi_unoarm'] =
+    'import kdi_unoarm\n' +
+    'import math\n' + 'import time';  
+  var code = 'kdi_unoarm.go_to_r_h(' + r + ', ' + h + ')\n';
+  return code;
+};
