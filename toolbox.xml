@@ -48,5 +48,10 @@
     <!-- Lấy toạ độ hiện tại h_now -->
     <block type="unoarm_get_h_now"></block>
 
+      <!-- Lấy toạ độ hiện tại S2 -->
+    <block type="unoarm_get_S2"></block>
+    <!-- Lấy toạ độ hiện tại S3 -->
+    <block type="unoarm_get_S3"></block>
+
   </category>
 </xml>

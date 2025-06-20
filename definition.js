@@ -156,3 +156,34 @@ Blockly.Python['unoarm_get_h_now'] = function(block) {
   return ['kdi_unoarm.h_now', Blockly.Python.ORDER_ATOMIC];
 };
 
+// --- Block: Get current S2 (Number) ---
+Blockly.Blocks['unoarm_get_S2'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Get current S2");
+    this.setOutput(true, "Number");
+    this.setColour(230);
+    this.setTooltip("Trả về giá trị S2 hiện tại");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Python['unoarm_get_r_now'] = function(block) {
+  Blockly.Python.definitions_['import_kdi_unoarm'] = 'import kdi_unoarm';
+  return ['kdi_unoarm.S2', Blockly.Python.ORDER_ATOMIC];
+};
+
+// --- Block: Get current h_now (Number) ---
+Blockly.Blocks['unoarm_get_S3'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Get current S3");
+    this.setOutput(true, "Number");
+    this.setColour(230);
+    this.setTooltip("Trả về giá trị S3 hiện tại");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Python['unoarm_get_S3'] = function(block) {
+  Blockly.Python.definitions_['import_kdi_unoarm'] = 'import kdi_unoarm';
+  return ['kdi_unoarm.S2', Blockly.Python.ORDER_ATOMIC];
+};

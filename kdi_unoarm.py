@@ -13,9 +13,14 @@ _d3 = 16
 _d4 = 4.64
 _d5 = 7.5
 
+
 # khai bao vi tri ban dau
 r_now = 28  # tam xa
 h_now = 9  # tam cao
+
+S2_now = 90  # goc
+S3_now = 90  # goc
+
 phi_now = 90  # goc
 topic_hut = None
 step = 0.1
@@ -51,8 +56,11 @@ def kiem_tra_tinh_hop_le(check_S2, check_S3):
 
 
 def go_to_S2_S3(to_S2, to_S3):
+    global S2_now, S3_now
     print(("".join([str(x2) for x2 in ["di den goc: ", to_S2, " , ", to_S3]])))
     if kiem_tra_tinh_hop_le(to_S2, to_S3):
+        S2_now = to_S2
+        S3_now = to_S3
         init_S2 = servo.position(1)
         init_S3 = servo.position(2)
         current_S2 = servo.position(1)
