@@ -67,12 +67,20 @@ Blockly.Python['unoarm_check_valid'] = function(block) {
 // 1) Block: Go to S2, S3
 Blockly.Blocks['unoarm_go_to_s2_s3'] = {
   init: function() {
-    this.appendValueInput("TO_S2")
-        .setCheck("Number")
+    // this.appendValueInput("TO_S2")
+    //     .setCheck("Number")
+    //     .appendField("Đi đến S2:");
+    // this.appendValueInput("TO_S3")
+    //     .setCheck("Number")
+    //     .appendField("S3:")
+    this.appendDummyInput()
         .appendField("Đi đến S2:");
+    this.appendValueInput("TO_S2")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("S3:");
     this.appendValueInput("TO_S3")
-        .setCheck("Number")
-        .appendField("S3:")
+        .setCheck("Number");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour(230);
