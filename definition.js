@@ -87,7 +87,7 @@ Blockly.Python['unoarm_go_to_s2_s3'] = function(block) {
   // đảm bảo import module có ở definitions_ (nếu chưa có, thêm vào đầu file)
   Blockly.Python.definitions_['import_kdi_unoarm'] =
     'import kdi_unoarm\n' +
-    'import math';
+    'import math\n' + 'import time';
 
   var toS2 = Blockly.Python.valueToCode(block, 'TO_S2', Blockly.Python.ORDER_ATOMIC) || '0';
   var toS3 = Blockly.Python.valueToCode(block, 'TO_S3', Blockly.Python.ORDER_ATOMIC) || '0';
