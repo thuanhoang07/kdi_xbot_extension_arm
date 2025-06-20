@@ -69,11 +69,10 @@ Blockly.Blocks['unoarm_go_to_s2_s3'] = {
   init: function() {
     this.appendValueInput("TO_S2")
         .setCheck("Number")
-        .appendField("Go to S2");
+        .appendField("Đi đến S2:");
     this.appendValueInput("TO_S3")
         .setCheck("Number")
-        .appendField("S3")
-        .appendField("to");
+        .appendField("S3:")
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setColour(230);
@@ -98,11 +97,11 @@ Blockly.Python['unoarm_go_to_s2_s3'] = function(block) {
 Blockly.Blocks['unoarm_go_to_r_h'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Di chuyển đến r");
+        .appendField("Di chuyển đến r:");
     this.appendValueInput("R")
         .setCheck("Number");
     this.appendDummyInput()
-        .appendField("h");
+        .appendField("h:");
     this.appendValueInput("H")
         .setCheck("Number");
     this.setPreviousStatement(true);
@@ -128,7 +127,7 @@ Blockly.Python['unoarm_go_to_r_h'] = function(block) {
 Blockly.Blocks['unoarm_get_r_now'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Get current r_now");
+        .appendField("Lấy giá trị r hiện tại");
     this.setOutput(true, "Number");
     this.setColour(230);
     this.setTooltip("Trả về giá trị r_now hiện tại");
@@ -144,7 +143,7 @@ Blockly.Python['unoarm_get_r_now'] = function(block) {
 Blockly.Blocks['unoarm_get_h_now'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Get current h_now");
+        .appendField("Lấy giá trị h hiện tại");
     this.setOutput(true, "Number");
     this.setColour(230);
     this.setTooltip("Trả về giá trị h_now hiện tại");
@@ -160,7 +159,7 @@ Blockly.Python['unoarm_get_h_now'] = function(block) {
 Blockly.Blocks['unoarm_get_S2'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Get current S2");
+        .appendField("Lấy giá trị S2 hiện tại");
     this.setOutput(true, "Number");
     this.setColour(230);
     this.setTooltip("Trả về giá trị S2 hiện tại");
@@ -176,7 +175,7 @@ Blockly.Python['unoarm_get_S2'] = function(block) {
 Blockly.Blocks['unoarm_get_S3'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Get current S3");
+        .appendField("Lấy giá trị S3 hiện tại");
     this.setOutput(true, "Number");
     this.setColour(230);
     this.setTooltip("Trả về giá trị S3 hiện tại");
