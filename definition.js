@@ -167,9 +167,9 @@ Blockly.Blocks['unoarm_get_S2'] = {
     this.setHelpUrl("");
   }
 };
-Blockly.Python['unoarm_get_r_now'] = function(block) {
+Blockly.Python['unoarm_get_S2'] = function(block) {
   Blockly.Python.definitions_['import_kdi_unoarm'] = 'import kdi_unoarm';
-  return ['kdi_unoarm.S2', Blockly.Python.ORDER_ATOMIC];
+  return ['kdi_unoarm.S2_now', Blockly.Python.ORDER_ATOMIC];
 };
 
 // --- Block: Get current h_now (Number) ---
@@ -185,5 +185,5 @@ Blockly.Blocks['unoarm_get_S3'] = {
 };
 Blockly.Python['unoarm_get_S3'] = function(block) {
   Blockly.Python.definitions_['import_kdi_unoarm'] = 'import kdi_unoarm';
-  return ['kdi_unoarm.S2', Blockly.Python.ORDER_ATOMIC];
+  return ['kdi_unoarm.S3_now', Blockly.Python.ORDER_ATOMIC];
 };
