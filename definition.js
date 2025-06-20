@@ -36,7 +36,7 @@ Blockly.Blocks['unoarm_check_valid'] = {
     //     .setCheck("Number")
     //     .appendField("S3");
     this.appendDummyInput()
-        .appendField("Kiểm tra giá trị hợp lệ của S2:");
+        .appendField("Kiểm tra tính hợp lệ của góc S2:");
     this.appendValueInput("S2")
         .setCheck("Number");
     this.appendDummyInput()
@@ -76,7 +76,7 @@ Blockly.Python['unoarm_check_valid'] = function(block) {
 Blockly.Blocks['unoarm_go_to_s2_s3'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Đi đến S2:");
+        .appendField("Đi đến góc S2:");
     this.appendValueInput("TO_S2")
         .setCheck("Number");
     this.appendDummyInput()
@@ -137,7 +137,7 @@ Blockly.Python['unoarm_go_to_r_h'] = function(block) {
 Blockly.Blocks['unoarm_get_r_now'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Lấy giá trị r hiện tại");
+        .appendField("Giá trị r hiện tại");
     this.setOutput(true, "Number");
     this.setColour(230);
     this.setTooltip("Trả về giá trị r_now hiện tại");
@@ -153,7 +153,7 @@ Blockly.Python['unoarm_get_r_now'] = function(block) {
 Blockly.Blocks['unoarm_get_h_now'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Lấy giá trị h hiện tại");
+        .appendField("Giá trị h hiện tại");
     this.setOutput(true, "Number");
     this.setColour(230);
     this.setTooltip("Trả về giá trị h_now hiện tại");
@@ -169,7 +169,7 @@ Blockly.Python['unoarm_get_h_now'] = function(block) {
 Blockly.Blocks['unoarm_get_S2'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Lấy giá trị S2 hiện tại");
+        .appendField("Giá trị S2 hiện tại");
     this.setOutput(true, "Number");
     this.setColour(230);
     this.setTooltip("Trả về giá trị S2 hiện tại");
@@ -185,7 +185,7 @@ Blockly.Python['unoarm_get_S2'] = function(block) {
 Blockly.Blocks['unoarm_get_S3'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Lấy giá trị S3 hiện tại");
+        .appendField("Giá trị S3 hiện tại");
     this.setOutput(true, "Number");
     this.setColour(230);
     this.setTooltip("Trả về giá trị S3 hiện tại");
